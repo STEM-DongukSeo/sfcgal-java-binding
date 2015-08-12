@@ -1,0 +1,70 @@
+javac -cp javacpp.jar CoordinateTest.java
+
+java -jar javacpp.jar -cp ..\..\..\..\; org/bytedeco/javacpp/example/CoordinateTest -properties windows-x86_64-mingw 
+-Xcompiler -IC:\dev\boost_1_55_0_64bit 
+-Xcompiler -IC:\dev\CGAL-4.5.2\include 
+-Xcompiler -IC:\dev\CGAL-4.5.2\auxiliary\gmp\include 
+-Xcompiler -IC:\dev\SFCGAL-1.0.5\include\ 
+-Xcompiler -LC:\dev\boost_1_55_0_64bit\stage\lib 
+-Xcompiler -LC:\dev\CGAL-4.5.2\lib 
+-Xcompiler -LC:\dev\CGAL-4.5.2\auxiliary\gmp\lib 
+-Xcompiler -LC:\dev\SFCGAL-1.0.5\src 
+-Xcompiler -lboost_system-mgw49-mt-1_55 
+-Xcompiler -lCGAL.dll 
+-Xcompiler -lSFCGALd.dll
+
+java -jar javacpp.jar -cp ..\..\..\..\; org/bytedeco/javacpp/example/CoordinateTest -properties windows-x86_64-mingw -Xcompiler -IC:\dev\boost_1_55_0_64bit -Xcompiler -IC:\dev\CGAL-4.5.2\include -Xcompiler -IC:\dev\CGAL-4.5.2\auxiliary\gmp\include -Xcompiler -IC:\dev\SFCGAL-1.0.5\include\ -Xcompiler -LC:\dev\boost_1_55_0_64bit\stage\lib -Xcompiler -LC:\dev\CGAL-4.5.2\lib -Xcompiler -LC:\dev\CGAL-4.5.2\auxiliary\gmp\lib -Xcompiler -LC:\dev\SFCGAL-1.0.5\src -Xcompiler -lboost_system-mgw49-mt-1_55 -Xcompiler -lCGAL.dll -Xcompiler -lSFCGALd.dll
+-Xcompiler -Wno-attributes -Xcompiler -Wno-unused-local-typedefs
+
+
+java -cp javacpp.jar;..\..\..\..\ org/bytedeco/javacpp/example/CoordinateTest -properties windows-x86_64_mingw
+
+
+
+
+
+
+//
+javac -cp javacpp.jar LegacyLibrary.java
+java -jar javacpp.jar -cp ..\..\..\..\ org/bytedeco/javacpp/example/LegacyLibrary -properties windows-x86_64-mingw
+java -cp javacpp.jar;..\..\..\..\ org/bytedeco/javacpp/example/LegacyLibrary -properties windows-x86_64-mingw
+
+//
+javac -cp javacpp.jar CoordinateTest.java
+java -jar javacpp.jar -cp ..\..\..\..\; org/bytedeco/javacpp/example/CoordinateTest 
+-Xcompiler -I/usr/local/include
+-Xcompiler -L/usr/local/lib/
+-Xcompiler -lboost_system
+-Xcompiler -lCGAL
+-Xcompiler -lCGAL_Core
+-Xcompiler -lSFCGAL
+-Xcompiler -lgmp
+-Xcompiler -lmpfr
+
+// Ubuntu
+/1
+javac -cp javacpp.jar org/bytedeco/sfcgal/CoordinateTest.java
+/2
+java -jar javacpp.jar org/bytedeco/sfcgal/CoordinateTest -Xcompiler -I/usr/local/include -Xcompiler -L/usr/local/lib/ -Xcompiler -lboost_system -Xcompiler -lCGAL -Xcompiler -lCGAL_Core -Xcompiler -lSFCGAL -Xcompiler -lgmp -Xcompiler -lmpfr
+
+java -jar javacpp.jar org/bytedeco/sfcgal/Algorithm -Xcompiler -I/usr/local/include -Xcompiler -L/usr/local/lib/ -Xcompiler -lboost_system -Xcompiler -lCGAL -Xcompiler -lCGAL_Core -Xcompiler -lSFCGAL -Xcompiler -lgmp -Xcompiler -lmpfr
+
+/3
+export LD_LIBRARY_PATH=/home/donguk/Desktop/example/javacpp/example/linux-x86_64:/usr/local/lib:$LD_LIBRARY_PATH
+java -cp javacpp.jar CoordinateTest
+
+java -cp javacpp.jar org/bytedeco/sfcgal/CoordinateTest
+
+// version 2
+/1
+javac -cp javacpp.jar edu/pnu/sfcgal/CoordinateTest.java
+/2
+java -jar javacpp.jar edu/pnu/sfcgal/CoordinateTest -Xcompiler -I/usr/local/include -Xcompiler -L/usr/local/lib/ -Xcompiler -lboost_system -Xcompiler -lCGAL -Xcompiler -lCGAL_Core -Xcompiler -lSFCGAL -Xcompiler -lgmp -Xcompiler -lmpfr
+
+java -jar javacpp.jar edu/pnu/sfcgal/Algorithm -Xcompiler -I/usr/local/include -Xcompiler -L/usr/local/lib/ -Xcompiler -lboost_system -Xcompiler -lCGAL -Xcompiler -lCGAL_Core -Xcompiler -lSFCGAL -Xcompiler -lgmp -Xcompiler -lmpfr
+
+/3
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+java -cp javacpp.jar CoordinateTest
+
+java -cp javacpp.jar org/bytedeco/sfcgal/CoordinateTest
