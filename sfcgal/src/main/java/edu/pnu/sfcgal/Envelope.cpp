@@ -3,20 +3,26 @@
 #include "Polygon.h"
 #include "Solid.h"
 
-LineString* Envelope::toRing() const {
+LineString& Envelope::toRing() const {
 	std::auto_ptr<SFCGAL::LineString> p = data.toRing();
+	
+	LineString *lineString = new LineString(p.release());
 
-	return new LineString(p.release());
+	return *lineString;
 }
 
-Polygon* Envelope::toPolygon() const {
+Polygon& Envelope::toPolygon() const {
 	std::auto_ptr<SFCGAL::Polygon> p = data.toPolygon();
 
-	return new Polygon(p.release());
+	Polygon *polygon = new Polygon(p.release());
+
+	return *polygon;
 }
 
-Solid* Envelope::toSolid() const {
+Solid& Envelope::toSolid() const {
 	std::auto_ptr<SFCGAL::Solid> p = data.toSolid();
 
-	return new Solid(p.release());
+	Solid *solid = new Solid(p.release());
+
+	return *solid;
 }

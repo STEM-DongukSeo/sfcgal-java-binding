@@ -38,9 +38,9 @@ public class Envelope extends Pointer {
     public static native @Cast("bool") boolean contains(@ByRef Envelope a, @ByRef Envelope b);
     public static native @Cast("bool") boolean overlaps(@ByRef Envelope a, @ByRef Envelope b);
     
-    public native LineString toRing();
-    public native Polygon toPolygon();
-    public native Solid toSolid();
+    public native @ByRef LineString toRing();
+    public native @ByRef Polygon toPolygon();
+    public native @ByRef Solid toSolid();
     
     @Name("operator==")
     public native @Cast("bool") boolean equals(@ByRef Envelope other);

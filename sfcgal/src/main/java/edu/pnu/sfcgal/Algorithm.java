@@ -414,8 +414,19 @@ public class Algorithm {
     	System.out.println(intersectionBI.dimension());
     	System.out.println(intersectionBB.dimension());
     	
-    	System.out.println(covers3D(solid1, solid5));
+    	System.out.println(covers3D(solid1, solid1));
     	
+    }
+    
+    public static void testLineStringPolygon() {
+    	Solid solid1 = getSolids().get(0);
+    	Point p1 = new Point(2,0,0);
+    	Point p2 = new Point(4,0,0);
+    	LineString ls1 = new LineString(p1, p2);
+    	Geometry boundary = ls1.boundary();
+    	
+    	System.out.println(boundary.asText(1));
+    	System.out.println(intersects3D(solid1, boundary));
     }
     
     public static void main(String[] args){
@@ -470,6 +481,7 @@ public class Algorithm {
     	
     	//test2D();
     	//test3D();
-    	testSolid();
+    	//testSolid();
+    	testLineStringPolygon();
     }
 }
